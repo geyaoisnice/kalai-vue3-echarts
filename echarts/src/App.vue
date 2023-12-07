@@ -1,12 +1,13 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/">Home</router-link> |
+      <!-- <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/helloworld">HelloWorld</router-link> |
       <router-link to="/hellotitle">HelloTitle</router-link> |
       <router-link to="/hellotooltip">HelloTooltip</router-link> |
-       <router-link to="/hellolegend">HelloLegend</router-link>
+      <router-link to="/hellolegend">HelloLegend</router-link> |
+      <router-link to="/hellokali">卡莱</router-link> -->
     </nav>
     <router-view />
   </div>

@@ -10,7 +10,6 @@
 import * as echarts from "echarts";
 export default {
   name: "HelloLegend",
-
   data() {
     return {};
   },

@@ -5,13 +5,14 @@ import HelloWorld from "../views/HelloWorld/HelloWorld.vue"
 import HelloTitle from "../views/HelloTitle/HelloTitle.vue"
 import HelloTooltip from "../views/HelloTooltip/HelloTooltip.vue"
 import HelloLegend from "../views/HelloLegend/HelloLegend.vue"
+import HelloKali from "../views/HelloKali/HelloKali.vue"
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HelloKali
   },
   {
     path: '/helloworld',
@@ -32,6 +33,11 @@ const routes = [
     path: '/hellolegend',
     name: 'hellolegend',
     component: HelloLegend
+  },
+  {
+    path: '/hellokali',
+    name: 'hellokali',
+    component: HelloKali
   }
 ]
 
