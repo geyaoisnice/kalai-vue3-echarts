@@ -76,6 +76,7 @@ export default {
   name: "HelloKali",
   data() {
     return {
+      flag: true,
       rules: {
         deviceId: [
           { required: true, message: "请选择设备名称", trigger: "change" },
@@ -110,8 +111,11 @@ export default {
       productOptions: [],
       zheOption: {
         title: {
-          text: "卡莱测点数据图",
+        //   text: "卡涞IOT测点曲线图",
           x: "center",
+        },
+        tooltip: {
+          trigger: "axis",
         },
         legend: {
           show: true,
@@ -119,12 +123,13 @@ export default {
           itemWidth: 10,
           itemHeight: 20,
         },
+
         xAxis: {
           data: [],
         },
         yAxis: {},
         series: {
-          name: "卡莱测点数据图",
+          //   name: "卡涞IOT测点曲线图",
           type: "line",
           smooth: true,
           data: [],
@@ -137,6 +142,11 @@ export default {
       console.log(res, "res.data");
       if (res.data.code === 1) {
         this.deviceOptions = res.data.data;
+      } else {
+        this.$message({
+          message: res.data.message,
+          type: "error",
+        });
       }
     });
   },
@@ -150,6 +160,11 @@ export default {
         .then((res) => {
           if (res.data.code === 1) {
             this.productOptions = res.data.data;
+          } else {
+            this.$message({
+              message: res.data.message,
+              type: "error",
+            });
           }
         });
     },
@@ -166,15 +181,15 @@ export default {
           `${BaseUrl}/linechart/querylinechart?deviceId=${deviceId}&productFunId=${productFunId}&startTime=${startTime.getTime()}&endTime=${endTime.getTime()}`
         )
         .then((res) => {
-            console.log(res,"111111")
+          console.log(res, "111111");
           if (res.data.code === 1) {
             this.setZheData(res.data.data);
             this.showZheData();
-          }else{
+          } else {
             this.$message({
-                message:res.data.message,
-                type: 'error'
-            })
+              message: res.data.message,
+              type: "error",
+            });
           }
         });
     },
@@ -218,5 +233,10 @@ export default {
   width: 100%;
   height: 600px;
   /* background-color: pink; */
+}
+.demoNull {
+  width: 100%;
+  height: 600px;
+  text-align: center;
 }
 </style>
